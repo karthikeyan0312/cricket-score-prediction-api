@@ -2,12 +2,13 @@ import pickle as pk
 import bz2
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
-#from flask_cors import CORS
+from flask_cors import CORS
 from cachetools import cached, TTLCache
 import numpy as np
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 cache = TTLCache(maxsize=100, ttl=86400)
 
@@ -40,4 +41,4 @@ api.add_resource(status,'/')
 api.add_resource(Sum,'/add/<int:a>,<int:b>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
