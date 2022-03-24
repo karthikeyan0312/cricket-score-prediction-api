@@ -1,6 +1,7 @@
 pickle-mixin
 bz2file
 flask
+flask_cors
 flask_restful
 gunicorn
 cachetools
