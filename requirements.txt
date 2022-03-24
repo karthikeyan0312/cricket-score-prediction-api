@@ -1,5 +1,5 @@
 pickle-mixin
-bz2
+bz2file
 flask
 flask_restful
 gunicorn
