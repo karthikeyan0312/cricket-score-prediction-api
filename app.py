@@ -2,7 +2,7 @@ import pickle as pk
 import bz2
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
-from flask_cors import CORS
+#from flask_cors import CORS
 from cachetools import cached, TTLCache
 import numpy as np
 
