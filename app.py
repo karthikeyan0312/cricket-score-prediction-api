@@ -10,7 +10,7 @@ app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
-cache = TTLCache(maxsize=100, ttl=86400)
+cache = TTLCache(maxsize=100, ttl=300)
 
 @cached(cache)
 def load_file():
