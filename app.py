@@ -19,6 +19,7 @@ def load_file():
     pkbz2 = pk.load(data)
     return pkbz2,sc
 pkbz2,sc=load_file()
+
 class status(Resource):    
     def get(self):
         try:
