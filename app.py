@@ -3,16 +3,16 @@ import bz2
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
 from flask_cors import CORS
-from cachetools import cached, TTLCache
+#from cachetools import cached, TTLCache
 import numpy as np
 
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
-cache = TTLCache(maxsize=100, ttl=300)
+#cache = TTLCache(maxsize=100, ttl=300)
 
-@cached(cache)
+#@cached(cache)
 def load_file():
     sc=pk.load(open(r"/app/transform.pkl",'rb'))
     data = bz2.BZ2File(r"/app/randomforestmodelbz2.pbz2","rb")
