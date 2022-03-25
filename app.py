@@ -18,7 +18,7 @@ def load_file():
     data = bz2.BZ2File(r"/app/randomforestmodelbz2.pbz2","rb")
     pkbz2 = pk.load(data)
     return pkbz2,sc
-pkbz2,sc=load_file()
+#pkbz2,sc=load_file()
 
 class status(Resource):    
     def get(self):
@@ -33,7 +33,10 @@ class Sum(Resource):
 
 class model(Resource):
     def get(self,a,b,c,d,e):
+        pkbz2,sc=load_file()
         res=pkbz2.predict(sc.transform(np.array([[a,b,c,d,e]])))
+        del pkbz2,sc
+        cache.clear()
         return jsonify({'Score': str(res)})
     
 #100,0,13,50,50
